@@ -7,6 +7,7 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title Portfolio | main page
+
   body
     .wrapper
       .welcome-section
@@ -186,15 +187,24 @@ html(lang="ru")
                   label.form__block
                     .form__label Введите ваше имя
                     input(type="text" name="name" placeholder="Ковальчук Дмитрий" required).form__input.form__input--name
+                    - var icons = ["user"]
+                      each item in icons
+                        +icon(item, "user-icon, form__icon")
                     .form__error
                   label.form__block
                     .form__label Введите ваш email
                     input(type="email" name="name" placeholder="loftschool@study.com" required).form__input.form__input--email
+                    - var icons = ["envelope"]
+                      each item in icons
+                        +icon(item, "envelope-icon, form__icon")
                     .form__error
                 .form__row
                   label.form__block
                     .form__label Сообщение к письму
                     textarea(name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required).form-input.form-input_textarea
+                    - var icons = ["message"]
+                      each item in icons
+                        +icon(item, "message-icon, form__icon")
                 .form__row
                   input(type="submit" value="Отправить").form__button  
 
@@ -215,14 +225,14 @@ html(lang="ru")
                         a.footer__menu-link #{item}
               .footer__content-second-line  
                 .footer__text        
-                    .footer__links-text Этот сайт я сделал в рамках обучения в <br> Школе онлайн образования Loftschool          
-                    .footer__links
-                      - var icons = ["insta", "vk", "github"];
-                      ul.socials
-                        each item in icons
-                          li.socials__item.footer__socials-item 
-                            a(href="").socials__link.footer__socials-link
-                              +icon(item, "socials__icon, footer__socials-icon")
+                  .footer__links-text Этот сайт я сделал в рамках обучения в <br> Школе онлайн образования Loftschool          
+                  .footer__links
+                    - var icons = ["insta", "vk", "github"];
+                    ul.socials
+                      each item in icons
+                        li.socials__item.footer__socials-item 
+                          a(href="").socials__link.footer__socials-link
+                            +icon(item, "socials__icon, footer__socials-icon")
                 .footer__quote
                   .footer__quote-content Всегда пишите код так, будто сопровождать его будет <br> склонный к насилию психопат, который знает где вы <br> живете
                   .footer__quote-author Martin Golding

@@ -27,6 +27,7 @@
 
 .form__block {
   margin-right: 95px;
+  position: relative;
 
   &:last-child {
     margin: 0;
@@ -45,18 +46,26 @@
   border-bottom: 2px solid #ffffff;
   width: 375px;
   padding-left: 65px;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #ff9a00;
+
+    &+.form__icon {
+      fill: #ff9a00;
+      opacity: 1;
+    }
+  }
 }
 
-.form__input--name {
-  &::after {
-    width: 26px;
-    height: 30px;
-    content: "";
-    background: svg-load('user.svg', fill=white);
-    margin-left: 20px;
-    opacity: 0.3;
-    display: block;
-  }
+.form__icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+  fill: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: 5px;
 }
 
 .form-input_textarea {
@@ -72,6 +81,16 @@
   width: 850px;
   padding-left: 65px;
   resize: none;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #ff9a00;
+
+    &+.form__icon {
+      fill: #ff9a00;
+      opacity: 1;
+    }
+  }
 }
 
 .form__button {
