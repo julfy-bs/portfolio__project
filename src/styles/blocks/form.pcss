@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-flow: column wrap;
-  margin-bottom: 50px;
+  // margin-bottom: 150px;
 }
 
 .form__row {
@@ -47,6 +47,18 @@
   padding-left: 65px;
 }
 
+.form__input--name {
+  &::after {
+    width: 26px;
+    height: 30px;
+    content: "";
+    background: svg-load('user.svg', fill=white);
+    margin-left: 20px;
+    opacity: 0.3;
+    display: block;
+  }
+}
+
 .form-input_textarea {
   background-color: transparent;
   color: #ffffff;
@@ -75,4 +87,8 @@
   font-weight: 700;
   line-height: 48px;
   text-transform: uppercase;
+
+  &:hover {
+    background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
+  }
 }

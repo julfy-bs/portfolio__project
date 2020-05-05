@@ -106,7 +106,7 @@ html(lang="ru")
 
         section.experience.section
           .container
-            h2.section__title.section__title--black Мои работы
+            h2.section__title.section__title--black.experience-section__title Мои работы
             .experience-wrapper
               .experience__left-column
                 .experience-screenshot__main-wrapper
@@ -160,7 +160,7 @@ html(lang="ru")
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 .review__autor
                   .review__left-column
-                    .review__avatar.avatar
+                    .review__avatar.avatar.avatar--small
                       +image("content/kovalchuk.png", "avatar-img")
                   .review__right-column
                     .review__title.review__name Ковальчук Дмитрий
@@ -171,7 +171,7 @@ html(lang="ru")
                   p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                 .review__autor
                   .review__left-column
-                    .review__avatar.avatar
+                    .review__avatar.avatar.avatar--small
                       +image("content/sabantsev.png", "avatar-img")
                   .review__right-column
                     .review__title.review__name Владимир Сабанцев
@@ -185,11 +185,11 @@ html(lang="ru")
                 .form__row.form__row-double
                   label.form__block
                     .form__label Введите ваше имя
-                    input(type="text" name="name" placeholder="Ковальчук Дмитрий" required).form__input
+                    input(type="text" name="name" placeholder="Ковальчук Дмитрий" required).form__input.form__input--name
                     .form__error
                   label.form__block
                     .form__label Введите ваш email
-                    input(type="email" name="name" placeholder="loftschool@study.com" required).form__input
+                    input(type="email" name="name" placeholder="loftschool@study.com" required).form__input.form__input--email
                     .form__error
                 .form__row
                   label.form__block

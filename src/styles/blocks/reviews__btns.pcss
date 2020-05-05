@@ -4,22 +4,24 @@
   width: 50px;
   height: 50px;
   margin-left: 120px;
+  margin-top: 40px;
   transform: translateY(-5px);
+  color: #fff;
 }
 
 .review-left-arrow__icon,
 .review-right-arrow__icon {
   width: 8px;
   height: 10px;
-  fill: #ffffff;
+  fill: currentColor;
 }
 
 .review-left-arrow__icon {
-  transform: rotate(180deg) translateY(60%);
+  transform: rotate(180deg) translateY(75%);
 }
 
 .review-right-arrow__icon {
-  transform: translateY(-60%);
+  transform: translateY(-75%);
 }
 
 .review-btn__left-arrow,
@@ -27,6 +29,12 @@
   border: 1px solid #ffffff;
   border-radius: 50%;
   padding: 20px;
+
+  &:hover {
+    color: #ff9a00;
+    border: 1px solid #ff9a00;
+
+  }
 }
 
 .review-btn__left-arrow {

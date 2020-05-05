@@ -7,6 +7,19 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  position: relative;
+
+  &::before {
+    content: url('/src/images/content/left-quote.png');
+    position: absolute;
+    left: -40%;
+    top: 5%;
+    // opacity: 0.05;
+    width: 75px;
+    height: 63px;
+    color:#ffffff;
+
+  }
 }
 
 .review__content {

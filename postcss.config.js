@@ -21,6 +21,7 @@ module.exports = {
       removeFill: true,
       path: "./src/images/icons"
     }),
+    require('postcss-url')({ url: 'rebase' }),
     require("cssnano"),
     require("postcss-pxtorem")({
       rootValue: 16,

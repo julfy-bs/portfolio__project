@@ -57,8 +57,16 @@
 .about__ps p {
   opacity: 0.5;
   color: currentColor;
-
+  position: relative;
   font-family: "Open Sans";
   font-size: 16px;
   line-height: 30px;
+
+  &::before {
+    content: url('/src/images/content/about-ps.png');
+    position: absolute;
+    left: -10%;
+    top: 10%;
+
+  }
 }
