@@ -36,11 +36,12 @@ html(lang="ru")
                 h4.user-data__desc Личный сайт <br> веб разработчика
                 h1.user-data__name Богдан <br> Сутужко
 
-            a(href="#").hero__bottom-btn.scroll-down-btn Скролл 
-            .scroll-down__wrapper
-              - var icons = ["scroll"]
-                each item in icons
-                  +icon(item, "scroll-down-icon")
+            .hero__link-wrapper
+              a(href="#").hero__bottom-btn.scroll-down-btn Скролл 
+              .scroll-down__wrapper
+                - var icons = ["scroll"]
+                  each item in icons
+                    +icon(item, "scroll-down-icon")
 
 
         section.about-section.section
