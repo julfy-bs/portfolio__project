@@ -10,8 +10,32 @@ html(lang="ru")
 
   body
     .wrapper
+
+      //- Welcome-Parallax wrapper -// 
+
       .welcome-section
-        section.hero.section
+
+        //- Parallax section -// 
+
+        section.parallax
+          .parallax__layer(data-speed="0.1")
+            img(src=require("images/parallax/1.png")).parallax__image
+          .parallax__layer(data-speed="0.25")
+            img(src=require("images/parallax/2.png")).parallax__image
+          .parallax__layer(data-speed="0.35")
+            img(src=require("images/parallax/3.png")).parallax__image
+          .parallax__layer(data-speed="0.45")
+            img(src=require("images/parallax/4.png")).parallax__image
+          .parallax__layer(data-speed="0.55")
+            img(src=require("images/parallax/5.png")).parallax__image
+          .parallax__layer(data-speed="0.65")
+            img(src=require("images/parallax/6.png")).parallax__image
+          .parallax__layer(data-speed="0.75")
+            img(src=require("images/parallax/6.png")).parallax__image
+
+        //- Header + Hero section -// 
+
+        section.hero
           .container
             header.header
               .header__logo
@@ -43,6 +67,7 @@ html(lang="ru")
                   each item in icons
                     +icon(item, "scroll-down-icon")
 
+        //- About section -// 
 
         section.about-section.section
           .container
@@ -55,9 +80,9 @@ html(lang="ru")
                   .user-info__content
                     - 
                       var userdata = [
-                        ["Проживаю", "г. Москва"],
-                        ["Возраст", "23 года"],
-                        ["Родился", "13 декабря 1996"]
+                        ["Проживаю:", "г. Москва"],
+                        ["Возраст:", "23 года"],
+                        ["Родился:", "13 декабря 1996"]
                       ];
                     table.user-info__data
                       tbody.user-info__data-body
@@ -67,80 +92,40 @@ html(lang="ru")
                             td.second-td #{row[1]}
 
               .about__content
-                .about__disclamer Привет, меня зовут
-                h2.about__title Богдан Сутужко
-                .about__desc
-                  p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about-top__content
+                  .about__disclamer Привет, меня зовут
+                  h2.about__title Богдан Сутужко
+                  .about__desc
+                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__ps
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
+      //- Main Content -// 
+
       main.maincontent
+
+        //- Skills section -// 
+
         section.skills-section.section 
-          .container
-            .skills
-              .left-column
-                +image("content/content-skills-hands.png", "skills__img")
-              .right-column
-                .values
-                  .values__title
-                    h2.section-title.values__title-text Чем я могу быть вам полезен
-                    .values__desc
-                      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .container.values__container
+            .values__wrapper
+              .values__title
+                .values__title-container
+                  .values__title-text Чем я могу быть полезен вам
+                  .values__content
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .values__widget
+                #skills-component
 
-                  ul.user-skills
-                    - 
-                      var skills = [
-                        ['Frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-                        ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                      ]
-                    each item in skills 
-                      li.user-skills__item.skills-row 
-                        h3.skills-row__title #{item[0]}
-                        ul.skills-row__list
-                          each skill in item[1]
-                            li.skills-row__item
-                              .skill
-                                //- svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                                  circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                                  circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                                  linear-gradient()
-                                .skill__title #{skill}
+        //- Experience section -// 
 
-        section.experience.section
-          .container
-            h2.section__title.section__title--black.experience-section__title Мои работы
-            .experience-wrapper
-              .experience__left-column
-                .experience-screenshot__main-wrapper
-                  +image("content/mainScreen.png", "screenshot__main")
-                  .experience-screenshot__secondary-wrapper
-                    +image("content/screenshot__secondary-1.png", "screenshot__secondary-1")
-                    +image("content/screenshot__secondary-2.png", "screenshot__secondary-2")
-                    +image("content/screenshot__secondary-3.png", "screenshot__secondary-3")
-                    +image("content/screenshot__secondary-4.png", "screenshot__secondary-4")
+        section.works
+          .container.works__container
+            .section-title.works__section-title Мои работы
+            .works__content
+              #slider-component
 
-                  .experience__btns
-                    .btn__left-arrow
-                      - var icons = ["arrow-down"]
-                      each item in icons
-                        +icon(item, "left-arrow__icon")
-                    .btn__right-arrow
-                      - var icons = ["arrow-down"]
-                      each item in icons
-                        +icon(item, "right-arrow__icon")
-                .experience-screenshot__number 2
-
-              .experience__right-column
-                .technology-marker__list
-                  .technology-marker__item-name HTML
-                  .technology-marker__item-name CSS
-                  .technology-marker__item-name Javascript
-                .experience__title Сайт школы<br>образования
-                .experience__desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.experience__link Посмотреть сайт
-                  - var icons = ["link"]
-                    each item in icons
-                      +icon(item, "experience__link-icon")
+        //- Reviews section -// 
 
         section.reviews.section
           .container
@@ -179,6 +164,8 @@ html(lang="ru")
                     .review__title.review__name Владимир Сабанцев
                     .review__post Преподаватель
 
+        //- Feedback(Form) section -// 
+
         section.feedback.section
           .container
             .feedback__wrapper
@@ -209,6 +196,8 @@ html(lang="ru")
                 .form__row
                   input(type="submit" value="Отправить").form__button  
 
+      //- Footer -// 
+
       footer.footer
         .container
           .footer__wrapper
@@ -237,3 +226,6 @@ html(lang="ru")
                 .footer__quote
                   .footer__quote-content Всегда пишите код так, будто сопровождать его будет <br> склонный к насилию психопат, который знает где вы <br> живете
                   .footer__quote-author Martin Golding
+
+    include ./templates/entry.pug
+    script(src="./parallax.js")
