@@ -1,19 +1,104 @@
+.values {
+  background: url("/src/images/bg/skills-bg.png") center center / cover no-repeat;
+  height: calc(100vh - 100px);
+  min-height: 890px;
+
+  @include phones {
+    margin-bottom: 75px;
+  }
+}
+
+.values__container {
+  position: relative;
+
+  @include tablets {
+    padding-bottom: 350px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url('~images/decor/skills-hands.png') left bottom / contain no-repeat;
+    display: block;
+    // bottom: 5%;
+    top: 5%;
+    width: 682px;
+    height: 983px;
+    left: -20%;
+
+    @include tablets {
+      bottom: 0;
+      left: 50%;
+      height: 300px;
+      transform: translateX(-50%);
+      background-position: center center;
+    }
+
+    @include phones {
+      width: 100%;
+    }
+  }
+}
+
+.values__wrapper {
+  position: relative;
+}
+
+.values__title {
+  padding-top: 100px;
+  margin-bottom: 82px;
+  display: flex;
+  justify-content: center;
+}
+
+.values__title-container {
+  width: 38%;
+  margin-left: 6%;
+
+  @include desktop {
+    width: 42%;
+    margin-left: 0;
+  }
+
+  @include tablets {
+    width: 68%;
+    text-align: center;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
 .values__title-text {
-  color: currentColor;
-  font-family: "Open Sans";
   font-size: 30px;
   font-weight: 700;
-  line-height: 36px;
+  margin-bottom: 55px;
+  color: #fff;
 }
 
-.values__desc {
-  opacity: 0.5;
-  color: currentColor;
-  font-family: "Open Sans - Semibold";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  padding-top: 60px;
-  max-width: 586px;
+.values__content {
+  color: #ffffff;
+  opacity: .5;
+  font-weight: 600;
+  line-height: 1.8;
 }
 
+.values__widget {
+  display: flex;
+  justify-content: flex-end;
+
+  @include tablets {
+    justify-content: center;
+  }
+}
+
+.values__widget-container {
+  width: 66%;
+
+  @include tablets {
+    width: 95%;
+  }
+}
