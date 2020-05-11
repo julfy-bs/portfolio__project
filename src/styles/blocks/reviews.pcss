@@ -3,6 +3,7 @@
 }
 
 .reviews__container {
+  display: block;
   width: 66%;
   height: 500px;
   position: absolute;
@@ -17,23 +18,21 @@
 }
 
 .reviews-slider {
+  display: block;
+  // max-width: 77%;
   height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
+  width: 80%;
 
+  transform: translateX(0);
 }
 
 
 .reviews-slider__item {
-  margin-left: 150px;
-  width: 300px;
-  transform: translate(35%);
-  // overflow: hidden;
-
-  &:last-child {
-    margin: 0;
-  }
+  width: 50%;
+  transform: translateX(30%);
+  display: flex;
+  align-items: start;
+  flex-shrink: 0;
 }
 
 .reviews-slider__controls {
@@ -94,7 +93,7 @@
 .quote {
   max-width: 300px;
   min-height: 500px;
-  margin-right: 50px;
+  // margin-right: 50px;
 }
 
 .quote__text {

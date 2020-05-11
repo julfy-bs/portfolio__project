@@ -10,7 +10,7 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        initialIndex: 2,
+        initialIndex: 0-2,
         prevNextButtons: false,
         pageDots: false,
         wrapAround: false,

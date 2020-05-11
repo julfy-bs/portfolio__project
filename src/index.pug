@@ -154,7 +154,7 @@ html(lang="ru")
                   button.reviews-slider__control.reviews-slider__control--right(@click="next" :disabled='false')
                     +icon('arrow-down', 'reviews-slider__control-arrow-icon review-right-arrow__icon')
               flickity(ref="flickity" :options="flickityOptions").reviews-slider
-                - for (var i = 0; i<4; i++)
+                - for (var i = 0; i<9; i++)
                   .reviews-slider__item
                     .reviews-slider__image
                       +icon('quote', 'reviews-slider__icon')
@@ -232,7 +232,7 @@ html(lang="ru")
               .footer__data-col
                 .text-quote
                   .text-quote__text
-                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете 
                   .text-quote__author Martin Golding  
 
     include ./templates/entry.pug
