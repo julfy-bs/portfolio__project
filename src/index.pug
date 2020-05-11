@@ -41,7 +41,7 @@ html(lang="ru")
               .header__logo
                 .logo БС
               .header__btns
-                nav.menu
+                nav.menu.header__menu
                   - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
                   ul.menu__list
                     each item in items
@@ -49,11 +49,16 @@ html(lang="ru")
                         a.menu__link #{item}
               .header__links
                 - var icons = ["insta", "vk", "github"];
-                ul.socials
+                ul.socials.header__socials
                   each item in icons
                     li.socials__item
                       a(href="").socials__link
                         +icon(item, "socials__icon")
+
+              .header__burger-menu
+                - var icons = ["menu"]
+                  each item in icons
+                    +icon(item, "menu-icon")
 
             .hero__content
               .user-data
@@ -173,7 +178,7 @@ html(lang="ru")
           section.feedback.section-half
             .container.feedback__container
               .feedback__wrapper
-                h2.section__title Связаться со мной
+                h2.section__title.feedback__title Связаться со мной
                 form.feedback__form.form
                   .form__row.form__row-double
                     label.form__block
@@ -204,12 +209,13 @@ html(lang="ru")
 
       footer.footer
         .container.footer__container
+          
           .footer__copyright 
             .footer__copyright-col 
               .footer__copyright-year &copy; 2020
-          .footer__copyright-userinfo
-            .footer__copyright-name Богдан Сутужко
-            .footer__data-text Личный сайт веб-разработчика
+            .footer__copyright-userinfo
+              .footer__copyright-name Богдан Сутужко
+              .footer__data-text Личный сайт веб-разработчика
           .footer__data
             .footer__btns
               nav.menu.menu--color-white.footer__data-menu

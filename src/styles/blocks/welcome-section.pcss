@@ -1,7 +1,10 @@
 .welcome-section {
-  // background: url('/src/images/bg-welcome.png') no-repeat;
-  // background-size: cover;
   position: relative;
   overflow: hidden;
   width: 100%;
+
+  @include tablets {
+    background: url('/src/images/bg/bg-welcome.png') no-repeat;
+    background-size: cover;
+  }
 }

@@ -1,12 +1,13 @@
 .socials {
   display: flex;
-
+  opacity: 0.5;
+  
   &--round-borders {
     .socials__item {
       width: 50px;
       height: 50px;
       border: 1px solid currentColor;
-      opacity: 0.3;
+      opacity: 0.5;
       border-radius: 50%;
       margin-right: 18px;
 
@@ -39,7 +40,7 @@
       width: 20px;
       height: 20px;
       fill: currentColor;
-      opacity: .35;
+      opacity: .5;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -47,6 +48,17 @@
 
 
     }
+  }
+
+  @include tablets {
+    padding-left: 150px;
+  }
+  
+  @include phones {
+    padding-left: 0;
+    justify-content: center;
+    margin-right: 20%;
+    padding: 7% 0 0;
   }
 }
 
@@ -76,5 +88,12 @@
   &:hover {
     fill: #ff9a00;
     opacity: 1;
+  }
+}
+
+.header__socials {
+  display: block;
+  @include phones {
+    display: none;
   }
 }

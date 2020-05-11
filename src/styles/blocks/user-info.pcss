@@ -8,11 +8,17 @@
   line-height: 30px;
   color: #ffffff;
 
-
+  @include phones {
+    margin-bottom: 30px;
+  }  
 }
 
 .user-info__avatar {
   margin-bottom: 50px;
+
+  @include phones {
+    margin-bottom: 15px;
+  }
 }
 
 .user-info__data-body {

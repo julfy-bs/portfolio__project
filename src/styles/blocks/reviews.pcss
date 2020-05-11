@@ -8,8 +8,17 @@
   justify-content: space-evenly;
   width: 66%;
   height: 500px;
+
   @include desktop {
-    width: 80%;
+    width: 86%;
+  }
+
+  @include tablets {
+    width: 100%;
+  }
+
+  @include phones {
+
   }
 }
 
@@ -17,6 +26,17 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 80px;
+  white-space: nowrap;
+
+  @include desktop {
+    margin-left: 130px;
+  }
+
+  @include phones {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .reviews-slider {
@@ -24,6 +44,16 @@
   height: 100%;
   width: 80%;
   transform: translateX(0);
+
+  @include tablets {
+    width: 100%;
+    transform: translateX(-15px);
+  }
+
+  @include phones {
+    width: 125%;
+    left: -75px;
+  }
 }
 
 
@@ -33,6 +63,10 @@
   display: flex;
   align-items: start;
   flex-shrink: 0;
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .reviews-slider__controls {
@@ -43,6 +77,17 @@
   height: 90px;
   margin-left: 250px;
   margin-top: 30px;
+
+  @include phones {
+    margin-left: 60%;
+  }
+}
+
+.reviews-slider__control--left,
+.reviews-slider__control--right {
+  .disabled {
+    display: none;
+  }
 }
 
 .review-left-arrow__icon {
@@ -77,12 +122,16 @@
 
 .reviews-slider__icon {
   position: absolute;
-  left: -30%;
+  left: -25%;
   top: 5%;
   opacity: 0.05;
   width: 75px;
   height: 63px;
   fill: #ffffff;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .quote {

@@ -5,6 +5,14 @@
   min-height: 650px;
   color: #ffffff;
   padding-top: 54px;
+
+  @include tablets {
+    padding-top: 25px;
+  }
+
+  @include phones {
+    padding-top: 10px;
+  }
 }
 
 .hero__bottom-btn {
@@ -13,13 +21,14 @@
   left: 50%;
   transform: translate(-50%);
   text-decoration: none;
-
-
+  
+  @include tablets {
+  }
 }
 
 .hero__content {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

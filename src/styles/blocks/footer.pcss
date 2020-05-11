@@ -3,6 +3,7 @@
   padding: 88px 0;
   color: white;
   line-height: 1.7;
+
   @include tablets {
     padding: 50px 0;
   }
@@ -11,6 +12,9 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
+
+  @include desktop {}
+
   @include phones {
     flex-direction: column;
   }
@@ -21,14 +25,17 @@
   display: flex;
   color: rgba(#fff, .1);
   justify-content: space-between;
+
   @include desktop {
     flex-direction: column;
     justify-content: flex-start;
     width: 20%;
   }
+
   @include tablets {
     width: 30%;
   }
+
   @include phones {
     width: 100%;
     margin-bottom: 30px;
@@ -37,20 +44,28 @@
 
 .footer__copyright-col {
   flex: 1;
+
   @include tablets {
     flex: initial;
   }
 }
 
 .footer__copyright-userinfo {
+  white-space: nowrap;
   width: 41%;
   padding-top: 9px;
+
   @include desktop {
     width: 100%;
+  }
+
+  @include tablets {
+    white-space: inherit;
   }
 }
 
 .footer__copyright-name {
+
   text-transform: uppercase;
   margin-bottom: 18px;
   color: #fff;
@@ -70,6 +85,7 @@
 }
 
 .footer__data-text {
+  color: white;
   margin-bottom: 25px;
   opacity: 0.3;
 
@@ -83,12 +99,15 @@
   padding-top: 7px;
   display: flex;
   flex-direction: column;
+
   @include desktop {
     width: 75%;
   }
+
   @include tablets {
     width: 60%;
   }
+
   @include phones {
     width: 100%;
   }
@@ -96,20 +115,27 @@
 
 .footer__data-menu {
   display: flex;
+  flex-direction: column;
   margin-bottom: 60px;
+  justify-content: space-between;
+
   @include tablets {
     margin-bottom: 30px;
   }
+
   .menu__list {
     justify-content: flex-start;
+
     @include tablets {
       flex-wrap: wrap;
     }
   }
+
   .menu__item {
     margin-right: 6%;
+
     @include tablets {
-      margin-bottom: 32px;
+      // margin-bottom: 32px;
     }
   }
 }
@@ -117,6 +143,7 @@
 .footer__data-content {
   display: flex;
   justify-content: space-between;
+
   @include tablets {
     flex-direction: column;
     justify-content: space-between;
@@ -125,6 +152,7 @@
 
 .footer__data-col {
   width: 46%;
+
   @include tablets {
     width: 100%;
     margin-bottom: 60px;

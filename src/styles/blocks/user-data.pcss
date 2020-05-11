@@ -2,6 +2,10 @@
   display: flex;
   flex-flow: wrap row;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .user-data__desc {
@@ -14,6 +18,18 @@
   padding-top: 10px;
   margin-left: -170px;
   text-align: right;
+
+  @include tablets {
+    margin-bottom: 50px;
+    padding: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  @include phones {
+    font-size: 14px;
+    margin-bottom: 21px;
+  }
 }
 
 .user-data__name {
@@ -21,4 +37,12 @@
   font-size: 72px;
   font-weight: 800;
   line-height: 1;
+
+  @include tablets {
+    text-align: center;
+  }
+  
+  @include phones {
+    font-size: 46px;
+  }
 }

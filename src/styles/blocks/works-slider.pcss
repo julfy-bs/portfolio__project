@@ -18,7 +18,12 @@
 
   @include tablets {
     margin-bottom: 105px;
-    width: 86%;
+    width: 95%;
+  }
+
+  @include phones {
+    width: 330px;
+    height: 186px;
   }
 
   &:before {
@@ -81,7 +86,6 @@
   right: 0;
   cursor: pointer;
 
-
   @include phones {
     display: none;
   }
@@ -117,9 +121,15 @@
   flex-flow: column wrap;
   cursor: pointer;
 
+  @include desktop {
+    top: 71%;
+    right: -6.6%;
+  }
+
   @include phones {
     top: initial;
     bottom: 0;
+    right: 0;
   }
 }
 
@@ -220,6 +230,10 @@
   min-width: 80px;
   text-align: center;
 
+  @include desktop {
+    margin-right: 5px;
+  }
+
 }
 
 .works-slider__title {
@@ -246,6 +260,10 @@
   font-weight: 700;
   position: relative;
   margin: 50px 20px;
+
+  @include tablets {
+    padding-left: 10px;
+  }
 }
 
 .iconed-link {
@@ -253,6 +271,10 @@
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @include tablets {
+    padding-right: 10px;
   }
 }
 

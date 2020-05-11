@@ -3,6 +3,12 @@
   justify-content: center;
 }
 
+.header__menu {
+  @include tablets {
+    display: none;
+  }
+}
+
 .menu__item {
   margin-right: 60px;
   color: currentcolor;
