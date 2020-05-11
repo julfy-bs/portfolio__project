@@ -1,125 +1,150 @@
 .footer {
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
+  background: #222427;
+  padding: 88px 0;
+  color: white;
+  line-height: 1.7;
+  @include tablets {
+    padding: 50px 0;
+  }
+}
+
+.footer__container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: 75px;
-  color: #ffffff;
-  margin: 30px 0;
-  // padding-top: 150px;
-}
-
-.footer__btns {
-  margin-bottom: 70px;
-}
-
-.footer__wrapper {
-  display: flex;
-  flex-flow: row wrap;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright {
-  opacity: 0.1;
-  color: #ffffff;
-  font-family: "Open Sans - Semibold";
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 30px;
-  flex: 1;
-}
-
-.footer__developer-info {
-  flex-flow: column wrap;
-  flex: 1;
-}
-
-.footer__content {
-  flex-flow: column wrap;
-  flex: 3;
-}
-
-.footer__menu-list {
+  width: 25%;
   display: flex;
-}
-
-.footer__menu-item {
-  margin-right: 60px;
-  color: currentcolor;
-  font-family: "Open Sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &:hover {
-    color: #ff9a00;
-    font-family: "Open Sans - Semibold";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
-    transform: none;
-  }
-}
-
-.footer__links-text {
-  opacity: 0.3;
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  margin-bottom: 45px;
-}
-
-.footer__content-second-line {
-  display: flex;
-  flex-flow: row wrap;
+  color: rgba(#fff, .1);
   justify-content: space-between;
+  @include desktop {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 20%;
+  }
+  @include tablets {
+    width: 30%;
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
-.footer__quote-content {
+.footer__copyright-col {
+  flex: 1;
+  @include tablets {
+    flex: initial;
+  }
+}
+
+.footer__copyright-userinfo {
+  width: 41%;
+  padding-top: 9px;
+  @include desktop {
+    width: 100%;
+  }
+}
+
+.footer__copyright-name {
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 34px;
+
+  @include phones {
+    margin-bottom: 7px;
+  }
+}
+
+.footer__copyright-year {
+  font-weight: 600;
+  font-size: 48px;
+  white-space: nowrap;
+}
+
+.footer__data-text {
+  margin-bottom: 25px;
   opacity: 0.3;
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  margin-bottom: 35px;
+
+  @include phones {
+    margin-bottom: 18px;
+  }
 }
 
-.footer__quote-author {
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 16px;
-  line-height: 30px;
+.footer__data {
+  width: 66%;
+  padding-top: 7px;
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    width: 75%;
+  }
+  @include tablets {
+    width: 60%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
-.footer__socials-item {
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  padding: 20px;
-  width: 50px;
-  height: 50px;
-  opacity: 0.4;
+.footer__data-menu {
+  display: flex;
+  margin-bottom: 60px;
+  @include tablets {
+    margin-bottom: 30px;
+  }
+  .menu__list {
+    justify-content: flex-start;
+    @include tablets {
+      flex-wrap: wrap;
+    }
+  }
+  .menu__item {
+    margin-right: 6%;
+    @include tablets {
+      margin-bottom: 32px;
+    }
+  }
+}
 
-  &:hover {
-    border: 1px solid #ff9a00;
-    opacity: 1;
-    color: #ff9a00;
+.footer__data-content {
+  display: flex;
+  justify-content: space-between;
+  @include tablets {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 
+.footer__data-col {
+  width: 46%;
+  @include tablets {
+    width: 100%;
+    margin-bottom: 60px;
   }
 
+  @include phones {
+    margin-bottom: 45px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
-.footer__socials-icon {
-  fill: currentColor;
-  transform: translate(-35%, -35%);
+.text-quote__text {
+  margin-bottom: 35px;
+  opacity: 0.3;
+}
 
-
+.text-quote__author {
+  color: #fff;
+  font-style: italic;
 }

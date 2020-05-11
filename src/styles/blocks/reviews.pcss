@@ -1,24 +1,131 @@
 .reviews {
-  background: #282926;
-  // margin-bottom: 150px;
+  color: white;
 }
 
-.reviews__wrapper {
+.reviews__container {
+  width: 66%;
+  height: 500px;
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  left: 300px;
+}
+
+.reviews__title {
   display: flex;
-  max-width: 1000px;
-  flex-flow: row wrap;
+  flex-flow: wrap row;
 }
 
-.reviews__items-wrapper {
+.reviews-slider {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+
+}
+
+
+.reviews-slider__item {
+  margin-left: 150px;
+  width: 300px;
+  transform: translate(35%);
+  // overflow: hidden;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.reviews-slider__controls {
   display: flex;
-  padding-top: 20px;
-  margin-left: 130px;
+  flex-flow: wrap column;
+  cursor: pointer;
+  width: 120px;
+  height: 60px;
+
+  margin-left: 150px;
+  margin-top: 30px;
+
+  .disabled {}
 }
 
-.reviews__item {
-  margin-right: 180px;
+.review-left-arrow__icon {
+  transform: rotate(180deg);
+}
+
+.reviews-slider__control {
+  color: #FFF;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: transparent;
+  margin-right: 50px;
+  transform: translate(-100px);
 
   &:last-child {
     margin-right: 0;
   }
+
+  &:hover {
+    color: #ff9a00;
+    border: 1px solid #ff9a00;
+
+  }
+}
+
+.reviews-slider__control-arrow-icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+}
+
+.reviews-slider__icon {
+  position: absolute;
+  left: -30%;
+  top: 5%;
+  opacity: 0.05;
+  width: 75px;
+  height: 63px;
+  fill: #ffffff;
+}
+
+.reviews-slider__control {}
+
+.quote {
+  max-width: 300px;
+  min-height: 500px;
+  margin-right: 50px;
+}
+
+.quote__text {
+  font-weight: 400;
+  line-height: 30px;
+  min-width: 323px;
+  height: 100%;
+  opacity: 0.5;
+  margin-bottom: 30px;
+}
+
+.user--horisontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user__data {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 48px;
+  white-space: nowrap;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.user__occ {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  opacity: 0.3;
 }
