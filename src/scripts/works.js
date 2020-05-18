@@ -72,6 +72,9 @@ new Vue({
           break;
       }
     },
+    handleClick(e) {
+			
+		},
     makeArrWithRequireImages(array) {
       return array.map((item) => {
         const requirePic = require(`../images/content/${item.photo}`);
