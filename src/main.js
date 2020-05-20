@@ -8,3 +8,5 @@ import "./scripts/parallax";
 import "./scripts/parallax__feedback";
 import "./scripts/works";
 import "./scripts/reviews";
+import "./scripts/burger-menu";
+import "./scripts/scrollTo";

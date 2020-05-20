@@ -2,10 +2,12 @@ html {
   @include desktop {
     font-size: 15px;
   }
+
   @include tablets {
     font-size: 14px;
   }
 }
+
 body,
 html {
   height: 100%;
@@ -17,7 +19,6 @@ body {
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
 }
 
 .wrapper {
@@ -26,26 +27,13 @@ body {
   position: relative;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1480px;
-  width: 95%;
-  // width: 1490px;
-
-  @include desktop {
-    width: 90%;
-  }
-
-  @include phones {
-    width: 85%;
-    height: 100%;
-    min-height: calc(1vh + 400px);
-  }
-}
-
 .fullscreen-section {
   height: 100vh;
   min-height: 650px;
+}
+
+.restrictedScroll {
+  overflow: hidden;
 }
 
 button {

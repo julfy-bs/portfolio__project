@@ -1,11 +1,10 @@
-var Vue = require('vue');
-var VueScrollTo = require('vue-scrollto');
+import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
+
+Vue.use(VueScrollTo);
  
-Vue.use(VueScrollTo)
- 
-// You can also pass in the default options
 Vue.use(VueScrollTo, {
-     container: "body",
+     el: "body",
      duration: 500,
      easing: "ease",
      offset: 0,
@@ -17,3 +16,7 @@ Vue.use(VueScrollTo, {
      x: false,
      y: true
  })
+
+new Vue({
+    el: "#wrapper"
+});

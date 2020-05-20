@@ -17,9 +17,7 @@
     width: 100%;
   }
 
-  @include phones {
-
-  }
+  @include phones {}
 }
 
 .reviews__title {
@@ -88,33 +86,37 @@
   }
 }
 
-.reviews-slider__control--left,
-.reviews-slider__control--right {
-  .disabled {
-    display: none;
-  }
-}
-
-.review-left-arrow__icon {
-  transform: rotate(180deg);
-}
-
 .reviews-slider__control {
-  color: #FFF;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
   padding: 20px;
   background-color: transparent;
-  margin-right: 50px;
   transform: translate(-100px);
+
+
+  &:hover {
+    color: #ff9a00;
+    border: 1px solid #ff9a00;
+
+  }
+
+  width: 50px;
+  height: 50px;
+  margin-right: 30px;
+  border-radius: 50%;
+  color: #FFF;
+
+  background-color: transparent;
+  border: 1px solid #ffffff;
 
   &:last-child {
     margin-right: 0;
   }
 
-  &:hover {
-    color: #ff9a00;
-    border: 1px solid #ff9a00;
+  &:active {
+    opacity: .7;
+  }
+
+  &[disabled] {
+    opacity: .3;
 
   }
 }
@@ -123,6 +125,11 @@
   width: 10px;
   height: 10px;
   fill: currentColor;
+  transform: translate(0px, -4px);
+}
+
+.review-left-arrow__icon {
+  transform: translate(-2px, -4px) rotate(180deg);
 }
 
 .reviews-slider__icon {
