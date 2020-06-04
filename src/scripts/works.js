@@ -1,4 +1,7 @@
 import Vue from "vue";
+import $axios from "../admin/helpers/apiSettings";
+import { getAbsoluteImgPath } from '../admin/helpers/pictures';
+
 
 const btns = {
   template: "#slider-btns",
@@ -6,12 +9,22 @@ const btns = {
 const thumbs = {
   template: "#slider-thumbs",
   props: ["works", "currentWork"],
+  methods: {
+    photoUrl(path) {
+      return getAbsoluteImgPath(path);
+    }
+  },
 };
 
 const display = {
   template: "#slider-display",
   components: { thumbs, btns },
   props: ["currentWork", "works", "currentIndex"],
+  methods: {
+    photoUrl(path) {
+      return getAbsoluteImgPath(path);
+    }
+  },
   computed: {
     reversedWorks() {
       const works = [...this.works];
@@ -59,32 +72,29 @@ new Vue({
   methods: {
     makeInfiniteLoopForIndex(value) {
       const worksAmountFromZero = this.works.length - 1;
-      if (value > worksAmountFromZero) this.currentIndex = 0;
-      if (value < 0) this.currentIndex = worksAmountFromZero;
+      if (value > worksAmountFromZero) {
+        this.currentIndex = 0;
+      }
+      if (value < 0) {
+        this.currentIndex = worksAmountFromZero;
+      }
     },
     handleSlide(direction) {
       switch (direction) {
-        case "next":
+        case 'next':
           this.currentIndex++;
           break;
-        case "prev":
+        case 'prev':
           this.currentIndex--;
           break;
       }
     },
-    handleClick(e) {
-			
-		},
-    makeArrWithRequireImages(array) {
-      return array.map((item) => {
-        const requirePic = require(`../images/content/${item.photo}`);
-        item.photo = requirePic;
-        return item;
-      });
+    handleSlidePreview(index) {
+      this.currentIndex = index;
     },
   },
-  created() {
-    const data = require("../data/works.json");
-    this.works = this.makeArrWithRequireImages(data);
+  async created() {
+    const { data } = await $axios.get("works/349");
+    this.works = data;
   },
 });

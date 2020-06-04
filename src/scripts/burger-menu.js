@@ -1,17 +1,19 @@
+
 const hamburger = document.querySelector('#hamburger-menu-link');
 const nav = document.querySelector('#hamburger-menu');
-const closeNavButton = document.querySelectorAll('.closeButton');
+const closeNavButton = document.querySelector('#close-nav-button');
 const navLinks = nav.querySelectorAll('.menu__link');
 
 hamburger.addEventListener('click', e => {
   e.preventDefault();
+
   nav.classList.add('hamburger-menu--active');
   document.body.classList.add('restrictedScroll');
 });
 
 closeNavButton.addEventListener('click', e => {
-  console.log('click');
   e.preventDefault();
+
   nav.classList.remove('hamburger-menu--active');
   document.body.classList.remove('restrictedScroll');
 });
@@ -22,3 +24,4 @@ for (let i = 0; i < navLinks.length; i++) {
     document.body.classList.remove('restrictedScroll');
   });
 }
+

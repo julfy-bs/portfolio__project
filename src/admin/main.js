@@ -1,8 +1,14 @@
 import Vue from 'vue';
 import App from './App.vue';
-import "../admin/default.pcss";
+import router from './router'
+import store from './store';
+import $axios from "./helpers/apiSettings";
+
+store.$axios = $axios;
 
 new Vue({
   el: "#app-root",
+  router,
+  store,
   render: h => h(App)
 });

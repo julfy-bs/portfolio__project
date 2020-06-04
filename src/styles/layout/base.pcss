@@ -21,6 +21,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1480px;
+  width: 83%;
+
+  @include desktop {
+    width: 91%;
+  }
+
+  @include phones {
+    width: 82%;
+  }
+}
+
 .wrapper {
   overflow: hidden;
   min-height: 100%;

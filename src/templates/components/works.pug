@@ -5,6 +5,7 @@ script(type="text/x-template")#slider-container
       :works="works"
       :currentIndex="currentIndex"
       @slide="handleSlide"
+      @slidePreview="handleSlidePreview"
     )
     info(
       :currentWork="currentWork"
@@ -14,13 +15,14 @@ script(type="text/x-template")#slider-display
   .works-slider__pics(:data-slide="currentIndex + 1")
     .works-slider__pics-content
       .works-slider__fullpic-container
-        img(:src="currentWork.photo").works-slider__fullpic
+        img(:src="photoUrl(currentWork.photo)").works-slider__fullpic
         btns(
-          @slide="$emit('slide', $event)"
+          @slide="$emit('slide', $event)" 
         )
         thumbs(
           :works="reversedWorks"
           :currentWork="currentWork"
+          @slidePreview="$emit('slidePreview', $event)" 
         )
 
 script(type="text/x-template")#slider-btns
@@ -31,30 +33,28 @@ script(type="text/x-template")#slider-btns
 script(type="text/x-template")#slider-thumbs
   ul.works-slider__thumbs
     li.works-slider__thumb-item(
-      v-for="work in works" 
+      v-for="(work, index) in works"
       :key="work.id"
       :class="{active: currentWork.id === work.id}"
-      :click.once="$emit('handleClick')"
+      @click="$emit('slidePreview', index)" 
     )
       a.works-slider__thumb-link
-        img(:src="work.photo").works-slider__thumb
+        img(:src="photoUrl(work.photo)").works-slider__thumb
 
 script(type="text/x-template")#slider-info
   .works-slider__data
     tags(
       :tags="tagsArray"
     )
-    .works-slider__title {{currentWork.title}}
-    .works-slider__desc
-      p {{currentWork.desc}}
-    .works-slider__link 
-      - var icons = ["link"]
-        each item in icons
-          +icon(item, "link-icon")
-
-      a(:href="currentWork.link").iconed-link Посмотреть сайт
+    .works__text
+      h3.works-slider__title {{currentWork.title}}
+      .works-slider__desc
+        p {{currentWork.desc}}
+      a.iconed-link(:href='currentWork.link' target="_blank")
+        .iconed-link__icon
+        span.iconed-link__text Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
-  ul.works-slider__tags
-    li.works-slider__tag-item(v-for="tag in tags" :key="tag")
-      .tag {{tag}}
+  .works__tags
+    ul.works-slider__tags
+      li.works-slider__tag-item(v-for="tag in tags" :key="tag") {{tag}}

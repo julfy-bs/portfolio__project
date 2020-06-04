@@ -9,6 +9,7 @@ html(lang="ru")
     title Portfolio | main page
     script(src="https://cdn.jsdelivr.net/npm/vue")
     script(src="https://cdn.jsdelivr.net/npm/vue-scrollto")
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
 
   body
     .wrapper(id="wrapper")
@@ -173,19 +174,19 @@ html(lang="ru")
                   button.reviews-slider__control.reviews-slider__control--right(@click="next" :disabled='false')
                     +icon('arrow-down', 'reviews-slider__control-arrow-icon review-right-arrow__icon')
               flickity(ref="flickity" :options="flickityOptions").reviews-slider
-                - for (var i = 0; i<9; i++)
-                  .reviews-slider__item
+                  .reviews-slider__item(v-for="review in reviews")
                     .reviews-slider__image
                       +icon('quote', 'reviews-slider__icon')
                     .quote
-                      .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .quote__text  
+                        p {{review.text}}
                       .quote__author
                         .user.user--horisontal
                           .user__avatar.avatar.avatar--small
-                            +image('content/user.jpg', 'user__avatar-pic')
+                            img(:src="photoUrl(review.photo)").user__avatar-pic
                           .user__data
-                            .user__name Ковальчук Дмитрий
-                            .user__occ Основатель Loftschool
+                            .user__name {{review.author}}
+                            .user__occ {{review.occ}}
 
           //- Feedback(Form) section -// 
 

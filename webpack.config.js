@@ -6,10 +6,11 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+require("babel-polyfill");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = './';
+  const publicPath = '/portfolio/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -78,15 +79,19 @@ module.exports = (env, argv) => {
         use: ["pug-plain-loader"]
       },
       {
-        use: ["pug-loader"]
+        use: [{
+        loader: "pug-loader",
+        options: {
+          pretty: true
+        }}]
       }
     ]
   };
 
   const config = {
     entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      main: ['babel-polyfill', "./src/main.js"],
+      admin: ['babel-polyfill', "./src/admin/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
