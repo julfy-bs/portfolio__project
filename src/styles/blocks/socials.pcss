@@ -1,7 +1,7 @@
 .socials {
   display: flex;
   opacity: 0.5;
-  
+
   &--round-borders {
     .socials__item {
       width: 50px;
@@ -53,12 +53,21 @@
   @include tablets {
     padding-left: 150px;
   }
-  
+
   @include phones {
     padding-left: 0;
     justify-content: center;
     margin-right: 20%;
     padding: 7% 0 0;
+  }
+}
+
+.hamburger-menu__socials {
+  display: none;
+  padding-left: 35px;
+
+  @include phones {
+    display: flex;
   }
 }
 
@@ -92,7 +101,7 @@
 }
 
 .header__socials {
-  
+
   @include phones {
     display: none;
   }

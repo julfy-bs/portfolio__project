@@ -67,12 +67,12 @@ html(lang="ru")
                     li.menu__item
                       a.menu__link(href="#" + menu[1][index]) #{item}
                   - var icons = ['insta', 'vk', 'github'];
-                ul.socials
+                ul.socials.hamburger-menu__socials
                   each item in icons
                     li.socials__item
                       a.socials__link(href="#" target="_blank")
                         +icon(`${item}`, 'socials__icon')
-                button.close-button(href="#")
+                a.close-button#close-nav-button(href="#")
                   +icon('remove', 'close-button__img', '20')
 
             .hero__content
@@ -81,7 +81,7 @@ html(lang="ru")
                 h1.user-data__name Богдан <br> Сутужко
 
             .hero__link-wrapper
-              a(href="#" v-scroll-to="'#about-section'").hero__bottom-btn.scroll-down-btn Скролл 
+              a(href="#about-section" v-scroll-to="'#about-section'").hero__bottom-btn.scroll-down-btn Скролл 
               .scroll-down__wrapper
                 - var icons = ["scroll"]
                   each item in icons

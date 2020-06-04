@@ -49,12 +49,15 @@ script(type="text/x-template")#slider-info
     .works__text
       h3.works-slider__title {{currentWork.title}}
       .works-slider__desc
-        p {{currentWork.desc}}
+        p {{currentWork.description}}
+      .works-slider__link 
+        - var icons = ["link"]
+          each item in icons
+            +icon(item, "link-icon")
       a.iconed-link(:href='currentWork.link' target="_blank")
         .iconed-link__icon
         span.iconed-link__text Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
-  .works__tags
-    ul.works-slider__tags
-      li.works-slider__tag-item(v-for="tag in tags" :key="tag") {{tag}}
+  ul.works-slider__tags
+    li.works-slider__tag-item(v-for="tag in tags" :key="tag") {{tag}}
