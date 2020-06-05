@@ -10,7 +10,7 @@
     "cypress:open": "cypress open"
   },
   "keywords": [],
-  "author": "Valentina Ponamareva <valiazin@gmail.com>",
+  "author": "Bogdan Sutuzhko <bogdan.sutuzhko.19@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -66,5 +66,5 @@
     "vue-scrollto": "^2.18.1",
     "vuex": "^3.4.0"
   },
-  "repository": "https://github.com/loftschool/ls-advanced-portfolio.git"
+  "repository": "https://github.com/julfy-bs/portfolio__project"
 }
