@@ -44,7 +44,7 @@ const info = {
   props: ["currentWork"],
   computed: {
     tagsArray() {
-      return this.currentWork.skills.split(",");
+      return this.currentWork && this.currentWork.techs && this.currentWork.techs.split(",") || '';
     }
   }
 };

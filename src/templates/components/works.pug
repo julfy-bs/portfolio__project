@@ -53,10 +53,10 @@ script(type="text/x-template")#slider-info
       .works-slider__link 
         - var icons = ["link"]
           each item in icons
-            +icon(item, "link-icon")
-      a.iconed-link(:href='currentWork.link' target="_blank")
-        .iconed-link__icon
-        span.iconed-link__text Посмотреть сайт
+            +icon(item, "iconed-link__icon")
+        a.iconed-link(:href='currentWork.link' target="_blank")
+          .iconed-link__icon
+          span.iconed-link__text Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
   ul.works-slider__tags
