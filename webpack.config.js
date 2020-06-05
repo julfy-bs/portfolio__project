@@ -10,7 +10,7 @@ require("babel-polyfill");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = '/portfolio/';
+  const publicPath = '/portfolio__project/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
