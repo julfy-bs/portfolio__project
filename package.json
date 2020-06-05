@@ -66,5 +66,5 @@
     "vue-scrollto": "^2.18.1",
     "vuex": "^3.4.0"
   },
-  "repository": "https://github.com/julfy-bs/portfolio__project"
+  "repository": "https://github.com/julfy-bs/portfolio__project.git"
 }
