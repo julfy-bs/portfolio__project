@@ -15,18 +15,37 @@
 
 .skills-row__list {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   margin-left: -4%;
 
   @include tablets {
     justify-content: center;
+    padding-left: 10%;
   }
 
   @include phones {
     justify-content: center;
+    padding: 50%;
   }
 }
 
 .skills-row__item {
+  flex: 1 1 calc((100% - 24%) / 4);
+  max-width: calc((100% - 24%) / 4);
   margin-left: 4%;
+
+  @include bigTablets {
+    flex: 1 1 calc((100% - 24%) / 2);
+    max-width: calc((100% - 24%) / 2);
+  }
+
+  @include tablets {
+    flex: 1 1 calc((100% - 24%) / 2);
+    max-width: calc((100% - 24%) / 2);
+  }
+
+  @include phones {
+    flex: 1 1 calc((100% - 4%) / 1);
+    max-width: calc((100% - 4%) / 1);
+  }
 }
