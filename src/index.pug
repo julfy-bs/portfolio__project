@@ -81,7 +81,7 @@ html(lang="ru")
                 h1.user-data__name Богдан <br> Сутужко
                 //- 1
             .hero__link-wrapper
-              a(href="#about-section" v-scroll-to="'#about-section'").hero__bottom-btn.scroll-down-btn Скролл 
+              a(href="#about-section").hero__bottom-btn.scroll-down-btn Скролл
               .scroll-down__wrapper
                 - var icons = ["scroll"]
                   each item in icons
@@ -169,7 +169,7 @@ html(lang="ru")
               .reviews__title
                 h2.section__title Что обо мне говорят
                 .reviews-slider__controls
-                  button.reviews-slider__control.reviews-slider__control--left(@click="previous" :disabled='true')
+                  button.reviews-slider__control.reviews-slider__control--left(@click="previous" :disabled='false')
                     +icon('arrow-down', 'reviews-slider__control-arrow-icon review-left-arrow__icon')
                   button.reviews-slider__control.reviews-slider__control--right(@click="next" :disabled='false')
                     +icon('arrow-down', 'reviews-slider__control-arrow-icon review-right-arrow__icon')
