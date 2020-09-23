@@ -1,6 +1,6 @@
 <template lang="pug">
-  .admin
-    router-view
+.admin
+  router-view
 </template>
 
 <style lang="postcss" src="./global.pcss"></style>
@@ -268,8 +268,8 @@ button {
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
+      -webkit-appearance: none;
+    }
   }
 
   &--editing {

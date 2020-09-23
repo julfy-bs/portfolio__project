@@ -116,20 +116,20 @@
 .works-slider__buttons {
   position: absolute;
   top: 70.9%;
-  right: -5.2%;
+  right: 0;
   display: flex;
   flex-flow: column wrap;
   cursor: pointer;
+  transform: translateX(100%);
 
   @include desktop {
     top: 71%;
-    right: -6%;
   }
 
   @include phones {
     top: initial;
     bottom: 0;
-    right: 0;
+    transform: translateX(0);
   }
 }
 

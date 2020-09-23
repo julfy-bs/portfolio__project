@@ -23,26 +23,26 @@ html(lang="ru")
         section.parallax.parallax__welcome
           .parallax__layer(data-speed="0.1")
             img(src=require("images/parallax/1.png")).parallax__image
-          .parallax__layer(data-speed="0.25")
+          .parallax__layer(data-speed="0.15")
             img(src=require("images/parallax/2.png")).parallax__image
-          .parallax__layer(data-speed="0.35")
+          .parallax__layer(data-speed="0.20")
             img(src=require("images/parallax/3.png")).parallax__image
-          .parallax__layer(data-speed="0.45")
+          .parallax__layer(data-speed="0.25")
             img(src=require("images/parallax/4.png")).parallax__image
-          .parallax__layer(data-speed="0.55")
+          .parallax__layer(data-speed="0.30")
             img(src=require("images/parallax/5.png")).parallax__image
-          .parallax__layer(data-speed="0.65")
+          .parallax__layer(data-speed="0.35")
             img(src=require("images/parallax/6.png")).parallax__image
-          .parallax__layer(data-speed="0.75")
-            img(src=require("images/parallax/7.png")).parallax__image
+          //.parallax__layer(data-speed="0.40")
+          //  img(src=require("images/parallax/7.png")).parallax__image
 
-        //- Header + Hero section -// 
+        //- Header + Hero section -//
 
         section.hero#hero-section
           .container
             header.header
               .header__logo
-                .logo БС
+                a(href="#").logo БС
               .header__btns
                 nav.menu.header__menu
                   - var menu = [['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'], ['hero-section', 'about-section', 'values-section', 'works-section', 'reviews-section', 'feedback-section']];
@@ -51,11 +51,11 @@ html(lang="ru")
                         li.menu__item
                           a.menu__link(href="#" + menu[1][index] v-scroll-to="'#" + menu[1][index] + "'") #{item}
               .header__links
-                - var icons = ["insta", "vk", "github"];
+                - var icons = [["insta", "vk", "github"], ["https://www.instagram.com/qco_b/", "https://vk.com/id35518345", "https://github.com/julfy-bs/"]];
                 ul.socials.header__socials
-                  each item in icons
+                  each item, link in icons[0]
                     li.socials__item
-                      a(href="#").socials__link
+                      a(href=icons[1][link] target="_blank").socials__link
                         +icon(item, "socials__icon")
 
 
@@ -96,7 +96,7 @@ html(lang="ru")
                 .user-info
                   .user-info__avatar
                     .avatar
-                      +image("content/user.jpg", "avatar-img")
+                      +image("content/user-me.jpg", "avatar-img")
                   .user-info__content
                     - 
                       var userdata = [
@@ -241,18 +241,18 @@ html(lang="ru")
             .footer__data-content
               .footer__data-col   
                 .footer__data-text
-                  p  Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool          
+                  p  Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                 .footer__data-socials
-                  - var icons = ["insta", "vk", "github"];
+                  - var icons = [["insta", "vk", "github"], ["https://www.instagram.com/qco_b/", "https://vk.com/id35518345", "https://github.com/julfy-bs/"]];
                   ul.socials.socials--round-borders
-                    each item in icons
+                    each item, link in icons[0]
                       li.socials__item
-                        a(href="").socials__link
+                        a(href=icons[1][link] target="_blank").socials__link
                           +icon(item, "socials__icon")
               .footer__data-col
                 .text-quote
                   .text-quote__text
-                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете 
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
                   .text-quote__author Martin Golding  
 
     include ./templates/entry.pug

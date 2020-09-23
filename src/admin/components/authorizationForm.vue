@@ -1,29 +1,40 @@
 <template lang="pug">
-  form.form.form--authorization(
-    method="POST" action="#"
-    @submit.prevent="login"
-    )
-    .authorization__form-row
-      .authorization__form-block
-        label.form__label.authorization__form-label(for="authorization_login") Логин
-        input.form__input.authorization__form-input(
-          type="text" 
-          placeholder="Логин" 
-          id="authorization_login"
-          v-model="user.name"
-          )
-        svgIcon(className="authorization__form-icon" name="user" fill="#a9aeb9" width="26" height="30")
-    .authorization__form-row
-      .authorization__form-block
-        label.form__label.authorization__form-label(for="authorization_password") Пароль
-        input.form__input.authorization__form-input(
-          type="password" 
-          placeholder="Пароль" 
-          id="authorization_password"
-          v-model="user.password"
-          )
-        svgIcon(className="authorization__form-icon" name="key" fill="#a9aeb9" width="26" height="30")
-    input.btn(type="submit" value="Отправить")
+form.form.form--authorization(
+  method='POST',
+  action='#',
+  @submit.prevent='login'
+)
+  .authorization__form-row
+    .authorization__form-block
+      label.form__label.authorization__form-label(for='authorization_login') Логин
+      input#authorization_login.form__input.authorization__form-input(
+        type='text',
+        placeholder='Логин',
+        v-model='user.name'
+      )
+      svgIcon(
+        className='authorization__form-icon',
+        name='user',
+        fill='#a9aeb9',
+        width='26',
+        height='30'
+      )
+  .authorization__form-row
+    .authorization__form-block
+      label.form__label.authorization__form-label(for='authorization_password') Пароль
+      input#authorization_password.form__input.authorization__form-input(
+        type='password',
+        placeholder='Пароль',
+        v-model='user.password'
+      )
+      svgIcon(
+        className='authorization__form-icon',
+        name='key',
+        fill='#a9aeb9',
+        width='26',
+        height='30'
+      )
+  input.btn(type='submit', value='Отправить')
 </template>
 
 <style lang="postcss" scoped>
@@ -140,9 +151,9 @@ export default {
   components: { svgIcon },
   data: () => ({
     user: {
-      name: "",
-      password: ""
-    }
+      name: '',
+      password: '',
+    },
   }),
   methods: {
     async login() {
@@ -152,11 +163,11 @@ export default {
 
         localStorage.setItem('token', token);
         $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
-        this.$router.replace("/about");
+        this.$router.replace('/about');
       } catch (error) {
         console.log(error);
       }
     },
-  }
-  };
+  },
+};
 </script>

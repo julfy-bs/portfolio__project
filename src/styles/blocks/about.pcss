@@ -4,6 +4,7 @@
   padding: 169px 17% 268px;
   justify-content: space-between;
 
+
   @include desktop {
     padding-right: 2%;
     padding-left: 2%;
@@ -20,6 +21,10 @@
 .about-section {
   // margin-top: 180px;
   position: relative;
+  background-image: url("~images/parallax/7.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .about__user-data {
@@ -118,4 +123,8 @@
     font-size: 14px;
     line-height: 24px;
   }
+}
+
+.avatar-img {
+  max-height: none;
 }
