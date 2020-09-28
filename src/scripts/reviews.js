@@ -42,9 +42,9 @@ new Vue({
       this.checkArrows();
     },
     checkArrows() {
-      if (this.$refs.flickity.selectedIndex() == 0) {
+      if (this.$refs.flickity.selectedIndex() === 0) {
         this.$el.querySelector('.reviews-slider__control--left').disabled = true;
-      } else if (this.$refs.flickity.selectedIndex() == this.$refs.flickity.slides().length - 1) {
+      } else if (this.$refs.flickity.selectedIndex() === this.$refs.flickity.slides().length - 1) {
         this.$el.querySelector('.reviews-slider__control--right').disabled = true;
       } else {
         this.$el.querySelector('.reviews-slider__control--left').disabled = false;
